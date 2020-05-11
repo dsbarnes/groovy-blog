@@ -1,0 +1,70 @@
+// This stuff matters!
+.container {
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  height:700px; // sadly, we're required to set at least the container height explicitly
+}
+.section-one {
+//   overflow:hidden;
+  transition:flex 0.3s ease-out; // note that we're transitioning flex, not height!
+  height:auto;
+  flex:3;
+}
+.section-two {
+//   overflow:hidden;
+  transition:flex 0.3s ease-out; // note that we're transitioning flex, not height!
+  height:auto;
+  flex:2;
+}
+.section-two {
+  overflow:hidden;
+  transition:flex 0.3s ease-out; // note that we're transitioning flex, not height!
+  height:auto;
+  flex:1;
+}
+
+.section-two.collapsed {
+  flex: 0;
+}
+
+
+// This stuff doesn't matter!
+* {
+  box-sizing:border-box;
+}
+body {
+  margin:0;
+  padding:10vh 10vw;
+  font-family:arial;
+}
+p {
+  margin:10px;
+}
+.container {
+  border: 3px solid #FFEB3B;
+  margin:0 auto;
+  max-width:300px;
+  border-radius:3px;
+  
+  .section-one {
+    border:3px solid #4CAF50;
+  }
+  .section-two{
+    border:3px solid #4CAF50;
+  }
+  .section-three{
+    border:3px solid #4CAF50;
+  }
+
+}
+button {
+  display:block;
+  font-size:18px;
+  border:none;
+  border-radius:3px;
+  background:#2196F3;
+  color:white;
+  margin:15px auto;
+  padding:15px;
+}

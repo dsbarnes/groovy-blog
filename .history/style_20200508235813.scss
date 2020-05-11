@@ -1,0 +1,78 @@
+// This stuff matters!
+.container {
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  
+  // sadly, we're required to set at least the container height explicitly
+  height:700px; 
+}
+
+.section-one {
+  flex:3;
+  border:3px solid #4CAF50;
+  margin: 10px;
+  padding: 10px;
+  #articles-section-text{ display: none;}
+}
+.section-one.collapsed{
+   overflow: hidden;
+  .double-border{ overflow: scroll; }
+}
+
+.section-two {
+  // note that we're transitioning flex, not height!
+  transition:all 0.6s ease; 
+  transition-property: flex, border, margin, padding;
+  border:3px solid #4CAF50;
+  flex:1;
+  overflow:hidden;
+  margin: 10px;
+  padding: 10px;
+}
+.section-two.collapsed {
+  flex: 0;
+  border: 0px solid white;
+  margin: 0 200px;
+  padding: 0 400px;
+}
+
+.section-three{
+  margin: 10px;
+  padding: 10px;
+  border:3px solid #4CAF50;
+}
+.double-border{
+  border: 1px solid orange;
+  height: 100%;
+  p{padding: 10px;}
+}
+.double-border.collapsed {
+  border: 1px solid white;
+}
+
+
+// This stuff doesn't matter!
+* {
+  box-sizing:border-box;
+}
+body {
+  margin:0;
+  font-family:arial;
+}
+.container {
+  border: 3px solid #FFEB3B;
+  margin:0 auto;
+  max-width:840px;
+  padding: 10px;
+}
+button {
+  display:block;
+  font-size:18px;
+  border:none;
+  border-radius:3px;
+  background:#2196F3;
+  color:white;
+  margin:15px auto;
+  padding:15px;
+}

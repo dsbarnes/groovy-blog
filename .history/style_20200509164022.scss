@@ -1,0 +1,171 @@
+// Main Container:
+$container-width: 840px;
+$outer-width: $container-width * .8;
+
+
+// Gruvbox colors:
+$background-color: #282828;
+$background-alt-color: #3c3836;
+$font-color: #fbf1c7;
+$font-alt-color: #ebdbb2;
+$outer-border: #d5c4a1;
+$inner-border: #928374;
+$red-color: #cc241d;
+$light-red-color: #fb4934;
+$green-color: #98971a;
+$light-green-color: #b8bb26;
+$yellow-color: #d79921;
+$light-yellow-color: #fabd2f;
+$blue-color: #458588;
+$light-blue-color: #83a598;
+$purple-color: #b16286;
+$light-purple-color: #d3869b;
+$aqua-color: #689d6a;
+$light-aqua-color: #8ec07c;
+
+
+// Font:
+$title-font: 'Montserrat', sans-serif;
+$body-font: 'Raleway', sans-serif;
+$title-font-size: 42px;
+$body-font-size: 16px;
+
+
+//Mixins:
+@mixin bg-border($bg-color, $border-color){
+  background-color: $bg-color;
+  border: 1px solid $border-color;
+}
+@mixin font-fam-size($fam, $size){
+  font-family: $fam;
+  font-size: $size;
+}
+
+// @mixin card{
+//   @include bg-border($background-color, $inner-border);
+//   font-family: $body-font;
+//   font-size: $body-font-size;
+//   line-height: 24px;
+//   margin: 14px auto;
+//   padding: 24px 0px 24px 24px;
+//   width: $outer-width - 28px;
+// }
+
+@mixin sectionButton($bg-color, $border-color){
+  @include bg-border($bg-color, $border-color);
+  @include font-fam-size($title-font, $body-font-size);
+  display: inline-block;
+  margin: 0 auto;
+  padding: 10px 0px;
+  text-align: center;
+  width: (($container-width / 4) - 3);
+}
+
+// Keyframes:
+@keyframes fade-in{
+  from{color: white;}
+  to{ color: black;}
+}
+#article{ animation: fade-in 3s forwards;}
+
+
+// Everything:
+* { box-sizing:border-box; }
+body{ background-color: $background-color; color: $font-color }
+.container {
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  // we're required to set height explicitly
+  height: 1220px;
+  
+  margin: 14px auto;
+  max-width: $container-width;
+}
+
+
+.section-one {
+  @include bg-border($background-color, $outer-border);
+  @include font-fam-size($body-font, $body-font-size);
+  margin: 14px 0;
+  flex: 3;
+  // overflow: hidden;
+}
+
+.section-one.collapsed{
+  // overflow: hidden;
+  .double-border{ overflow: scroll; }
+}
+
+.section-two {
+  // note that we're transitioning flex, not height!
+  @include bg-border($background-color, $outer-border);
+  @include font-fam-size($body-font, $body-font-size);
+  // border: 2px solid $outer-border;
+
+  flex: 2;
+  // overflow:hidden;
+  transition:all 0.4s ease; 
+  transition-property: flex, border, margin, padding, color;
+}
+
+.section-two.collapsed {
+  border: 0px solid white;
+  flex: 0;
+  margin: 0 200px;
+  padding: 0 400px;
+  color: white;
+}
+
+.section-three{
+  @include bg-border($background-color, $outer-border);
+  @include font-fam-size($body-font, $body-font-size);
+  border: 2px solid $outer-border;
+  flex: 2;
+  transition: all 0.6s ease;
+}
+.section-three.collapsed{ flex: 1; }
+
+.double-border{
+  height: 100%;
+  // border: 1px solid $inner-border;
+  border: 1px solid red;
+  margin: 0 auto;
+  width: $outer-width;
+}
+.double-border.collapsed { border: 0px solid white; }
+
+
+
+* { box-sizing:border-box; }
+
+
+
+#nameCard{
+  border: 1px solid $outer-border;
+  padding: 4px;
+  text-align: center;
+  // margin: 12px;
+
+  small{ @include font-fam-size($body-font, $body-font-size*1.5); }
+  a{ text-decoration: none; color: $light-yellow-color }
+
+  #doubleBorder{
+      @include bg-border($background-color, $inner-border);
+      p{ @include font-fam-size($title-font, $title-font-size); }
+      margin: 14px auto;
+      padding: 10px;
+      width: ($container-width - 42px);
+  }
+}
+
+
+// Nav 'buttons'
+#selections{ 
+  display: flex;
+  justify-content: space-between;
+}
+#articles{ @include sectionButton($red-color, $light-red-color) }
+#frontend{ @include sectionButton($purple-color, $light-purple-color) }
+#backend{ @include sectionButton($blue-color, $light-blue-color) }
+#fullstack{ @include sectionButton($aqua-color, $light-aqua-color) }

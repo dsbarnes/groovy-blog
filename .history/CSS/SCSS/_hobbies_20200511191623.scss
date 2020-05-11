@@ -1,0 +1,25 @@
+// This section dissapears:
+.hobbies {
+    // note that we're transitioning flex, not height!
+    @include bg-border($background-color, $outer-border);
+    @include font-fam-size($body-font, $body-font-size);
+    line-height: $margin-pad-sizing/2;
+    margin: $margin-pad-sizing/2 0;
+    flex: 2;
+    .bigEmoji{ font-size: $title-font-size; }
+    .xpad{ padding-left: 24px; }
+    .emojiText{
+        position: relative;
+        bottom: $margin-pad-sizing;
+        padding-left: $margin-pad-sizing/2;
+    }
+    transition:all 0.7s ease; 
+  }
+  .hobbies.collapsed {
+    border: 0px solid $background-color;
+    color: $background-color;
+    overflow: hidden;
+    flex: 0;
+    // Big number to squeze box inward
+    margin: 0 $margin-pad-sizing * 7;
+  }

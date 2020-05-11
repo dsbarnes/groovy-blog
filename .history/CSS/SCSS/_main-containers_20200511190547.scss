@@ -1,0 +1,15 @@
+// Overall styling:
+* { box-sizing:border-box; }
+body{ 
+    background-color: $background-color; color: $font-color }
+//Everything visible is inside this container:
+.container {
+    display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  width: $container-width;
+  margin: 0 auto;
+  // we're required to set height explicitly
+  height: $container-height;
+}
+h1{ @include font-fam-size($title-font, $title-font-size/1.25)

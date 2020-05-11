@@ -1,0 +1,258 @@
+// Main Container:
+// Sizings - everything is a multiple of 14!!
+$container-width: 840px;
+$container-height: 1100px;
+$outer-width: $container-width * .8;
+$margin-pad-sizing: 14px;
+
+
+// Gruvbox colors:
+$background-color: #282828;
+$background-alt-color: #3c3836;
+$font-color: #fbf1c7;
+$font-alt-color: #ebdbb2;
+$outer-border: #d5c4a1;
+$inner-border: #928374;
+$red-color: #cc241d;
+$light-red-color: #fb4934;
+$green-color: #98971a;
+$light-green-color: #b8bb26;
+$yellow-color: #d79921;
+$light-yellow-color: #fabd2f;
+$blue-color: #458588;
+$light-blue-color: #83a598;
+$purple-color: #b16286;
+$light-purple-color: #d3869b;
+$aqua-color: #689d6a;
+$light-aqua-color: #8ec07c;
+
+
+// Font:
+$title-font: 'Montserrat', sans-serif;
+$body-font: 'Raleway', sans-serif;
+$title-font-size: 42px;
+$body-font-size: 16px;
+
+
+//Mixins:
+@mixin bg-border($bg-color, $border-color){
+  background-color: $bg-color;
+  border: 1px solid $border-color;
+}
+@mixin font-fam-size($fam, $size){
+  font-family: $fam;
+  font-size: $size;
+}
+@mixin sectionButton($bg-color, $border-color){
+  @include bg-border($bg-color, $border-color);
+  @include font-fam-size($title-font, $body-font-size);
+  display: inline-block;
+  margin: 0 auto;
+  //That just looks best as 12, idk.
+  padding: 12px 0px;
+  text-align: center;
+  width: (($container-width / 4));
+}
+
+// Keyframes:
+@keyframes border-color-red{
+  from { border-color: $inner-border; }
+  to { border-color: $light-red-color; }
+}
+@keyframes border-color-purple{
+  from { border-color: $inner-border; }
+  to { border-color: $light-purple-color; }
+}
+@keyframes border-color-blue{
+  from { border-color: $inner-border; }
+  to { border-color: $light-blue-color; }
+}
+@keyframes border-color-aqua{
+  from { border-color: $inner-border; }
+  to { border-color: $light-aqua-color; }
+}
+@keyframes fade-in{
+  from{color: $background-color;}
+  to{ color: $font-color; }
+}
+.article-repo{ animation: fade-in 2.5s forwards;}
+
+
+// Overall styling:
+* { box-sizing:border-box; }
+body{ background-color: $background-color; color: $font-color }
+//Everything visible is inside this container:
+.container {
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  width: $container-width;
+  margin: 0 auto;
+  // we're required to set height explicitly
+  height: $container-height;
+}
+h1{ @include font-fam-size($title-font, $title-font-size/1.25)}
+
+
+// Name Card
+#nameCard{
+  border: 1px solid $outer-border;
+  padding: $margin-pad-sizing/2;
+  text-align: center;
+  line-height: $margin-pad-sizing/2;
+
+  small{ @include font-fam-size($body-font, $body-font-size*1.5); }
+  a{ text-decoration: none; color: $light-yellow-color }
+
+  #doubleBorder{
+      @include bg-border($background-color, $inner-border);
+      p{ @include font-fam-size($title-font, $title-font-size);}
+      margin: $margin-pad-sizing auto;
+      padding: $margin-pad-sizing;
+      padding-bottom: $margin-pad-sizing*2;
+
+      // 14px b/c of margin.
+      // Why *3? Good question.
+      width: ($container-width - 14px*3);
+  }
+}
+
+
+// Nav 'buttons'
+#selections{ 
+  display: flex;
+  justify-content: space-between;
+  margin-top: $margin-pad-sizing;
+}
+#articles{ @include sectionButton($red-color, $light-red-color) }
+#frontend{ @include sectionButton($purple-color, $light-purple-color) }
+#backend{ @include sectionButton($blue-color, $light-blue-color) }
+#fullstack{ @include sectionButton($aqua-color, $light-aqua-color) }
+
+// General double border settings, different from
+// name card b/c ...damnit
+.double-border{
+  border: 1px solid $inner-border;
+  // Variables not working in calc()
+  // will investigate.
+  height: calc(100% - 28px); // $margin-pad-size*2
+  width: calc(100% - 28px);  // $margin-pad-size*2
+  margin: $margin-pad-sizing auto 0 auto;
+  padding: $margin-pad-sizing*2;
+}
+.double-border.border-color-red{}
+.double-border.border-color-purple{}
+.double-border.border-color-blue{}
+.double-border.border-color-aqua{}
+
+// This is the section that expands:
+.content{
+  @include bg-border($background-color, $outer-border);
+  @include font-fam-size($body-font, $body-font-size);
+
+  
+  line-height: $margin-pad-sizing/2;
+  margin: $margin-pad-sizing 0;
+  overflow: hidden;
+  flex: 3;
+}
+
+.content.collapsed{
+  // iOS browsers:
+  ::-webkit-scrollbar {
+    background: transparent;
+    width: 9px;
+  }
+  ::-webkit-scrollbar-track { 
+    background: transparent; 
+  }
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    background:$background-alt-color;
+  }
+  ::-webkit-scrollbar-track-piece:start { 
+    // Makes all the difference
+    margin-top: 1.5px; 
+  }
+
+  // Firefox:
+  // Which is much, much easier.
+  scrollbar-color: $background-alt-color $background-color;
+  scrollbar-width: thin;
+
+  .double-border{ 
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+
+// Not visible until the .content section
+// is .collapsed
+.article-repo{
+  margin-bottom: $margin-pad-sizing*4;
+  h1{ margin: $margin-pad-sizing 0; }
+  p{line-height: $margin-pad-sizing*1.5; }
+  .repo-title-links p{
+    width: $container-width/10;
+    display: inline-block;
+  }
+  .repo-description{
+    margin: 0px;
+    line-height: $margin-pad-sizing*1.5;
+  }
+}
+
+
+// This section dissapears:
+.hobbies {
+  // note that we're transitioning flex, not height!
+  @include bg-border($background-color, $outer-border);
+  @include font-fam-size($body-font, $body-font-size);
+  line-height: $margin-pad-sizing/2;
+  margin: $margin-pad-sizing/2 0;
+  flex: 2;
+  .bigEmoji{ font-size: $title-font-size; }
+  .xpad{ padding-left: 24px; }
+  .emojiText{
+      position: relative;
+      bottom: $margin-pad-sizing;
+      padding-left: $margin-pad-sizing/2;
+  }
+  transition:all 0.7s ease; 
+}
+.hobbies.collapsed {
+  border: 0px solid $background-color;
+  color: $background-color;
+  overflow: hidden;
+  flex: 0;
+  // Big number to squeze box inward
+  margin: 0 $margin-pad-sizing * 7;
+}
+
+
+// This section appears to never change
+.social-media{
+  @include bg-border($background-color, $outer-border);
+  @include font-fam-size($body-font, $body-font-size);
+  text-align: center;
+  margin: $margin-pad-sizing/2 0;
+  flex: 2;
+  transition: all 0.6s ease;
+}
+.social-media.collapsed{ 
+  flex: 1;
+  #media-icons{
+    // Why 20? Good question.
+    margin-bottom: 
+      $margin-pad-sizing + $margin-pad-sizing/2 + 1;
+  }
+}
+
+// Social Media Icons:
+#media-icons{
+  width: $container-width / 2;
+  margin: 0 auto;
+  text-align: center;
+  line-height: $margin-pad-sizing;
+  img{ width: $margin-pad-sizing*4; margin: 0 $margin-pad-sizing/2; }
+}

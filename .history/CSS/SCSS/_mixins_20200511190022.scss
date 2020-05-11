@@ -1,0 +1,19 @@
+//Mixins:
+@mixin bg-border($bg-color, $border-color){
+    background-color: $bg-color;
+    border: 1px solid $border-color;
+  }
+  @mixin font-fam-size($fam, $size){
+    font-family: $fam;
+    font-size: $size;
+  }
+  @mixin sectionButton($bg-color, $border-color){
+    @include bg-border($bg-color, $border-color);
+    @include font-fam-size($title-font, $body-font-size);
+    display: inline-block;
+    margin: 0 auto;
+    //That just looks best as 12, idk.
+    padding: 12px 0px;
+    text-align: center;
+    width: (($container-width / 4));
+  }

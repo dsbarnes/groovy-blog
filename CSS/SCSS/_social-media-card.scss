@@ -1,0 +1,28 @@
+// This section appears to never change
+.social-media{
+    @include bg-border($background-color, $outer-border);
+    @include font-fam-size($body-font, $body-font-size);
+    
+    text-align: center;
+    margin: $margin-pad-sizing/2 0;
+    flex: 2;
+    
+    transition: all 0.6s ease;
+  }
+  
+  .social-media.collapsed{ 
+    flex: 1;
+    #media-icons{
+      // Why 20? Good question.
+      margin-bottom: 20px;
+    }
+  }
+  
+  // Social Media Icons:
+  #media-icons{
+    width: $container-width / 2;
+    margin: 0 auto;
+    text-align: center;
+    line-height: $margin-pad-sizing;
+    img{ width: $margin-pad-sizing*4; margin: 0 $margin-pad-sizing/2; }
+  }

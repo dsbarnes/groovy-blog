@@ -1,0 +1,16 @@
+// This stuff matters!
+.container {
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  height:600px; // sadly, we're required to set at least the container height explicitly
+}
+.section {
+  overflow:hidden;
+  transition:flex 0.3s ease-out; // note that we're transitioning flex, not height!
+  height:auto;
+  flex:1;
+}
+.section.collapsed {
+  flex: 0;
+}

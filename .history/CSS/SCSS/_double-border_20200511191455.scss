@@ -1,0 +1,17 @@
+// General double border settings, different from
+// name card b/c ...damnit
+.double-border{
+    border: 1px solid $inner-border;
+    // Variables not working in calc()
+    // will investigate.
+    height: calc(100% - 28px); // $margin-pad-size*2
+    width: calc(100% - 28px);  // $margin-pad-size*2
+    margin: $margin-pad-sizing auto 0 auto;
+    padding: $margin-pad-sizing*2;
+  }
+
+  .double-border.border-color-red{animation: border-color-red 2s ease forwards; }
+  .double-border.border-color-purple{animation: border-color-purple 2s ease forwards; }
+  .double-border.border-color-blue{animation: border-color-blue 2s ease forwards; }
+  .double-border.border-color-aqua{animation: border-color-aqua 2s ease forwards; }
+  

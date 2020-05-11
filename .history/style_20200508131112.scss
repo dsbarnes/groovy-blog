@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#name-card{
+    border: 1px solid black;
+    background-color: purple;
+    width: 50%;
+    margin: 10px auto;
+}
+#about-card{
+    position: absolute;
+    width: 50%;
+    border: 1px solid black;
+    background-color: green;
+    left: 25%;
+}
+#hobbies-card{
+    position: relative;
+    border: 1px solid black;
+    background-color: royalblue;
+    width: 50%;
+
+}
+#socialmedia-card{
+    position: relative;
+    border: 1px solid black;
+    background-color: salmon;
+    width: 50%;
+}
