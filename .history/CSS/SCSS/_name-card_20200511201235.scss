@@ -1,0 +1,47 @@
+// @import 'CSS/SCSS/colors';
+// @import 'CSS/SCSS/sizings';
+// @import 'CSS/SCSS/fonts';
+
+// @import 'CSS/SCSS/mixins';
+// @import 'CSS/SCSS/keyframes';
+
+// @import 'CSS/SCSS/main-containers';
+// @import 'CSS/SCSS/double-border';
+
+// @import 'CSS/SCSS/name-card';
+// @import 'CSS/SCSS/nav-buttons';
+// @import 'CSS/SCSS/main-content';
+// @import 'CSS/SCSS/hobbies';
+// @import 'CSS/SCSS/social-media-card';
+
+
+// Name Card
+#nameCard{
+    border: 1px solid $outer-border;
+    padding: $margin-pad-sizing/2;
+    text-align: center;
+    line-height: $margin-pad-sizing/2;
+  
+    small{ 
+        @include font-fam-size($body-font, $body-font-size*1.5); 
+    }
+    
+    a{ 
+        text-decoration: none; color: $light-yellow-color 
+    }
+  
+    #doubleBorder{
+        @include bg-border($background-color, $inner-border);
+        p{ 
+            @include font-fam-size($title-font, $title-font-size);
+        }
+        
+        margin: $margin-pad-sizing auto;
+        padding: $margin-pad-sizing;
+        padding-bottom: $margin-pad-sizing*2;
+  
+        // 14px b/c of margin.
+        // Why *3? Good question.
+        width: ($container-width - 14px*3);
+    }
+  }

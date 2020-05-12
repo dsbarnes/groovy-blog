@@ -1,17 +1,18 @@
-@import './sizings';
-
 // General double border settings, different from
 // name card b/c ...damnit
 .double-border{
     border: 1px solid $inner-border;
     // Variables not working in calc()
     // will investigate.
+    
+    text-decoration: none;
 
     height: calc(100% - 28px); // $margin-pad-size*2
     width: calc(100% - 28px);  // $margin-pad-size*2
     
     margin: $margin-pad-sizing auto 0 auto;
     padding: $margin-pad-sizing*2;
+    
 }
 
 .border-color-red{animation: border-color-red 2s ease forwards; }

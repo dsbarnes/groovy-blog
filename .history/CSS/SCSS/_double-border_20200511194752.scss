@@ -1,5 +1,3 @@
-@import './sizings';
-
 // General double border settings, different from
 // name card b/c ...damnit
 .double-border{
@@ -12,6 +10,11 @@
     
     margin: $margin-pad-sizing auto 0 auto;
     padding: $margin-pad-sizing*2;
+    
+    a{
+        height: 500px;
+        width: 500px;
+    }
 }
 
 .border-color-red{animation: border-color-red 2s ease forwards; }

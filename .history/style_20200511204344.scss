@@ -1,0 +1,35 @@
+// @import 'CSS/SCSS/colors';
+// @import 'CSS/SCSS/double-border';
+// @import 'CSS/SCSS/fonts';
+// @import 'CSS/SCSS/hobbies';
+// @import 'CSS/SCSS/keyframes';
+// @import 'CSS/SCSS/main-containers';
+// @import 'CSS/SCSS/main-content';
+// @import 'CSS/SCSS/mixins';
+// @import 'CSS/SCSS/name-card';
+// @import 'CSS/SCSS/nav-buttons';
+// @import 'CSS/SCSS/sizings';
+// @import 'CSS/SCSS/social-media-card';
+
+@use 'CSS/SCSS/sizings';
+
+// Not visible until the .content section
+// is .collapsed
+.article-repo{
+  h1{ margin: $margin-pad-sizing 0; }
+  p{line-height: $margin-pad-sizing*1.5; }
+
+  margin-bottom: $margin-pad-sizing*4;
+
+  .repo-title-links p{
+    width: $container-width/10;
+    display: inline-block;
+  }
+
+  .repo-description{
+    margin: 0px;
+    line-height: $margin-pad-sizing*1.5;
+  }
+}
+
+.article-repo{ animation: fade-in 2.5s forwards;}

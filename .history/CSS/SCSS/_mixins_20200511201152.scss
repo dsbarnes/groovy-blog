@@ -1,0 +1,38 @@
+// @import 'CSS/SCSS/colors';
+// @import 'CSS/SCSS/sizings';
+// @import 'CSS/SCSS/fonts';
+
+// @import 'CSS/SCSS/mixins';
+// @import 'CSS/SCSS/keyframes';
+
+// @import 'CSS/SCSS/main-containers';
+// @import 'CSS/SCSS/double-border';
+
+// @import 'CSS/SCSS/name-card';
+// @import 'CSS/SCSS/nav-buttons';
+// @import 'CSS/SCSS/main-content';
+// @import 'CSS/SCSS/hobbies';
+// @import 'CSS/SCSS/social-media-card';
+
+
+//Mixins:
+@mixin bg-border($bg-color, $border-color){
+    background-color: $bg-color;
+    border: 1px solid $border-color;
+}
+
+@mixin font-fam-size($fam, $size){
+    font-family: $fam;
+    font-size: $size;
+}
+
+@mixin sectionButton($bg-color, $border-color){
+    @include bg-border($bg-color, $border-color);
+    @include font-fam-size($title-font, $body-font-size);
+    display: inline-block;
+    margin: 0 auto;
+    //That just looks best as 12, idk.
+    padding: 12px 0px;
+    text-align: center;
+    width: (($container-width / 4));
+}

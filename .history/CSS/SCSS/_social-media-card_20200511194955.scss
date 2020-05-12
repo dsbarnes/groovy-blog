@@ -16,7 +16,6 @@
       // Why 20? Good question.
       margin-bottom: 20px;
     }
-
   }
   
   // Social Media Icons:
@@ -25,6 +24,9 @@
     margin: 0 auto;
     text-align: center;
     line-height: $margin-pad-sizing;
+    a{ 
+      text-decoration: none;
+      color: white;
+    }
     img{ width: $margin-pad-sizing*4; margin: 0 $margin-pad-sizing/2; }
-    a{text-decoration: none;}
   }

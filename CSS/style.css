@@ -1,3 +1,69 @@
+.double-border {
+  border: 1px solid #928374;
+  height: calc(100% - 28px);
+  width: calc(100% - 28px);
+  margin: 14px auto 0 auto;
+  padding: 28px;
+}
+
+.border-color-red {
+  -webkit-animation: border-color-red 2s ease forwards;
+          animation: border-color-red 2s ease forwards;
+}
+
+.border-color-purple {
+  -webkit-animation: border-color-purple 2s ease forwards;
+          animation: border-color-purple 2s ease forwards;
+}
+
+.border-color-blue {
+  -webkit-animation: border-color-blue 2s ease forwards;
+          animation: border-color-blue 2s ease forwards;
+}
+
+.border-color-aqua {
+  -webkit-animation: border-color-aqua 2s ease forwards;
+          animation: border-color-aqua 2s ease forwards;
+}
+
+.hobbies {
+  background-color: #282828;
+  border: 1px solid #d5c4a1;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  line-height: 7px;
+  margin: 7px 0;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.hobbies .bigEmoji {
+  font-size: 42px;
+}
+
+.hobbies .xpad {
+  padding-left: 24px;
+}
+
+.hobbies .emojiText {
+  position: relative;
+  bottom: 14px;
+  padding-left: 7px;
+}
+
+.hobbies.collapsed {
+  border: 0px solid #282828;
+  color: #282828;
+  overflow: hidden;
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  margin: 0 98px;
+}
+
 @-webkit-keyframes border-color-red {
   from {
     border-color: #928374;
@@ -88,11 +154,6 @@
   }
 }
 
-.article-repo {
-  -webkit-animation: fade-in 2.5s forwards;
-          animation: fade-in 2.5s forwards;
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -122,6 +183,47 @@ body {
 h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 33.6px;
+}
+
+.content {
+  background-color: #282828;
+  border: 1px solid #d5c4a1;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  line-height: 7px;
+  margin: 14px 0;
+  overflow: hidden;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+.content.collapsed {
+  scrollbar-color: #3c3836 #282828;
+  scrollbar-width: thin;
+}
+
+.content.collapsed ::-webkit-scrollbar {
+  background: transparent;
+  width: 9px;
+}
+
+.content.collapsed ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.content.collapsed ::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #3c3836;
+}
+
+.content.collapsed ::-webkit-scrollbar-track-piece:start {
+  margin-top: 1.5px;
+}
+
+.content.collapsed .double-border {
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 #nameCard {
@@ -213,73 +315,44 @@ h1 {
   width: 210px;
 }
 
-.double-border {
-  border: 1px solid #928374;
-  height: calc(100% - 28px);
-  width: calc(100% - 28px);
-  margin: 14px auto 0 auto;
-  padding: 28px;
-}
-
-.double-border.border-color-red {
-  -webkit-animation: border-color-red 2s ease forwards;
-          animation: border-color-red 2s ease forwards;
-}
-
-.double-border.border-color-purple {
-  -webkit-animation: border-color-purple 2s ease forwards;
-          animation: border-color-purple 2s ease forwards;
-}
-
-.double-border.border-color-blue {
-  -webkit-animation: border-color-blue 2s ease forwards;
-          animation: border-color-blue 2s ease forwards;
-}
-
-.double-border.border-color-aqua {
-  -webkit-animation: border-color-aqua 2s ease forwards;
-          animation: border-color-aqua 2s ease forwards;
-}
-
-.content {
+.social-media {
   background-color: #282828;
   border: 1px solid #d5c4a1;
   font-family: "Raleway", sans-serif;
   font-size: 16px;
-  line-height: 7px;
-  margin: 14px 0;
-  overflow: hidden;
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
+  text-align: center;
+  margin: 7px 0;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
 }
 
-.content.collapsed {
-  scrollbar-color: #3c3836 #282828;
-  scrollbar-width: thin;
+.social-media.collapsed {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
-.content.collapsed ::-webkit-scrollbar {
-  background: transparent;
-  width: 9px;
+.social-media.collapsed #media-icons {
+  margin-bottom: 20px;
 }
 
-.content.collapsed ::-webkit-scrollbar-track {
-  background: transparent;
+#media-icons {
+  width: 420px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 14px;
 }
 
-.content.collapsed ::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 5px;
-  background: #3c3836;
+#media-icons img {
+  width: 56px;
+  margin: 0 7px;
 }
 
-.content.collapsed ::-webkit-scrollbar-track-piece:start {
-  margin-top: 1.5px;
-}
-
-.content.collapsed .double-border {
-  overflow-y: scroll;
-  overflow-x: hidden;
+#media-icons a {
+  text-decoration: none;
 }
 
 .article-repo {
@@ -304,76 +377,7 @@ h1 {
   line-height: 21px;
 }
 
-.hobbies {
-  background-color: #282828;
-  border: 1px solid #d5c4a1;
-  font-family: "Raleway", sans-serif;
-  font-size: 16px;
-  line-height: 7px;
-  margin: 7px 0;
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
-  -webkit-transition: all 0.7s ease;
-  transition: all 0.7s ease;
-}
-
-.hobbies .bigEmoji {
-  font-size: 42px;
-}
-
-.hobbies .xpad {
-  padding-left: 24px;
-}
-
-.hobbies .emojiText {
-  position: relative;
-  bottom: 14px;
-  padding-left: 7px;
-}
-
-.hobbies.collapsed {
-  border: 0px solid #282828;
-  color: #282828;
-  overflow: hidden;
-  -webkit-box-flex: 0;
-      -ms-flex: 0;
-          flex: 0;
-  margin: 0 98px;
-}
-
-.social-media {
-  background-color: #282828;
-  border: 1px solid #d5c4a1;
-  font-family: "Raleway", sans-serif;
-  font-size: 16px;
-  text-align: center;
-  margin: 7px 0;
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
-  -webkit-transition: all 0.6s ease;
-  transition: all 0.6s ease;
-}
-
-.social-media.collapsed {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.social-media.collapsed #media-icons {
-  margin-bottom: 22px;
-}
-
-#media-icons {
-  width: 420px;
-  margin: 0 auto;
-  text-align: center;
-  line-height: 14px;
-}
-
-#media-icons img {
-  width: 56px;
-  margin: 0 7px;
+.article-repo {
+  -webkit-animation: fade-in 2.5s forwards;
+          animation: fade-in 2.5s forwards;
 }

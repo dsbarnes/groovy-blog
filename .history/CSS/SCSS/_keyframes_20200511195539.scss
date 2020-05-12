@@ -1,0 +1,24 @@
+@use 'CSS/SCSS/colos'
+
+
+// Keyframes:
+@keyframes border-color-red{
+    from { border-color: $inner-border; }
+    to { border-color: $light-red-color; }
+  }
+  @keyframes border-color-purple{
+    from { border-color: $inner-border; }
+    to { border-color: $light-purple-color; }
+  }
+  @keyframes border-color-blue{
+    from { border-color: $inner-border; }
+    to { border-color: $light-blue-color; }
+  }
+  @keyframes border-color-aqua{
+    from { border-color: $inner-border; }
+    to { border-color: $light-aqua-color; }
+  }
+  @keyframes fade-in{
+    from{color: $background-color;}
+    to{ color: $font-color; }
+  }

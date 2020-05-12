@@ -1,0 +1,27 @@
+// @import 'CSS/SCSS/colors';
+// @import 'CSS/SCSS/sizings';
+// @import 'CSS/SCSS/fonts';
+
+// @import 'CSS/SCSS/mixins';
+// @import 'CSS/SCSS/keyframes';
+
+// @import 'CSS/SCSS/main-containers';
+// @import 'CSS/SCSS/double-border';
+
+// @import 'CSS/SCSS/name-card';
+// @import 'CSS/SCSS/nav-buttons';
+// @import 'CSS/SCSS/main-content';
+// @import 'CSS/SCSS/hobbies';
+// @import 'CSS/SCSS/social-media-card';
+
+
+// Nav 'buttons'
+#selections{ 
+    display: flex;
+    justify-content: space-between;
+    margin-top: $margin-pad-sizing;
+  }
+  #articles{ @include sectionButton($red-color, $light-red-color) }
+  #frontend{ @include sectionButton($purple-color, $light-purple-color) }
+  #backend{ @include sectionButton($blue-color, $light-blue-color) }
+  #fullstack{ @include sectionButton($aqua-color, $light-aqua-color) } 

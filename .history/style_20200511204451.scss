@@ -11,7 +11,7 @@
 @import 'CSS/SCSS/sizings';
 @import 'CSS/SCSS/social-media-card';
 
-// @use 'CSS/SCSS/sizings';
+@use 'CSS/SCSS/sizings';
 
 // Not visible until the .content section
 // is .collapsed

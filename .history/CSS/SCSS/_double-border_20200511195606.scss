@@ -1,4 +1,18 @@
-@import './sizings';
+@use 'CSS/SCSS/colors';
+@use 'CSS/SCSS/sizings';
+@use 'CSS/SCSS/fonts';
+
+@use 'CSS/SCSS/mixins';
+@use 'CSS/SCSS/keyframes';
+
+@use 'CSS/SCSS/main-containers';
+@use 'CSS/SCSS/double-border';
+
+@use 'CSS/SCSS/name-card';
+@use 'CSS/SCSS/nav-buttons';
+@use 'CSS/SCSS/main-content';
+@use 'CSS/SCSS/hobbies';
+@use 'CSS/SCSS/social-media-card';
 
 // General double border settings, different from
 // name card b/c ...damnit

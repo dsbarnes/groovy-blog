@@ -1,3 +1,20 @@
+@use 'CSS/SCSS/colors';
+@use 'CSS/SCSS/sizings';
+@use 'CSS/SCSS/fonts';
+
+@use 'CSS/SCSS/mixins';
+@use 'CSS/SCSS/keyframes';
+
+@use 'CSS/SCSS/main-containers';
+@use 'CSS/SCSS/double-border';
+
+@use 'CSS/SCSS/name-card';
+@use 'CSS/SCSS/nav-buttons';
+@use 'CSS/SCSS/main-content';
+@use 'CSS/SCSS/hobbies';
+@use 'CSS/SCSS/social-media-card';
+
+
 // This section appears to never change
 .social-media{
     @include bg-border($background-color, $outer-border);
@@ -16,7 +33,6 @@
       // Why 20? Good question.
       margin-bottom: 20px;
     }
-
   }
   
   // Social Media Icons:
@@ -25,6 +41,10 @@
     margin: 0 auto;
     text-align: center;
     line-height: $margin-pad-sizing;
+    a{ 
+      text-decoration: none;
+      color: white;
+      height: 500px;
+    }
     img{ width: $margin-pad-sizing*4; margin: 0 $margin-pad-sizing/2; }
-    a{text-decoration: none;}
   }
